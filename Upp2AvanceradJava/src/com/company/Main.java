@@ -52,7 +52,10 @@ public class Main {
         DefaultTableModel tableModel = new DefaultTableModel(data, columnNames) {
         };
 
-
+        //Kod för att sortera kolumnerna
+        TableRowSorter<TableModel> sorter = new TableRowSorter<>(table.getModel());
+        table.setRowSorter(sorter);
+        
         //lägger till element i UIn
         table.setModel(tableModel);
         JScrollPane pane = new JScrollPane(table);
